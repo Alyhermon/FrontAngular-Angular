@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { ContactosService } from 'src/app/services/contactos.service';
 
 @Component({
   selector: 'app-contactos',
@@ -8,9 +9,19 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 })
 export class ContactosComponent implements OnInit {
 
+
   modalSwitch:boolean;
 
-  constructor() { }
+  public contactoArray: Array<any>=[]
+
+  //Constructor
+  constructor(
+    private ContactosService: ContactosService
+  ) {
+    this.ContactosService.getPersonas().subscribe((resp: any) => {
+      this.contactoArray = resp
+    })
+   }
 
   ngOnInit(): void {
   }
@@ -20,5 +31,6 @@ export class ContactosComponent implements OnInit {
   openModal(){
     this.modalSwitch = true;
   }
+  
 
 }
