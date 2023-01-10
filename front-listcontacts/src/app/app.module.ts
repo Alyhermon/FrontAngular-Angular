@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContactosComponent } from './view/contactos/contactos.component';
 import { FormComponent } from './components/form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ModalComponent } from './components/modal/modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -27,14 +29,16 @@ const appRoutes: Routes=[
     InicioComponent,
     ListaComponent,
     ContactosComponent,
-    FormComponent
+    FormComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
+    NgbModule, 
 
   ],
   providers: [],
