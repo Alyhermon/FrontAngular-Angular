@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CrudService } from './services/crud.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'front-listcontacts';
+  public lista:any =[];
+  constructor(private CrudService:CrudService){
+
+  }
+
+  ngOnInit():void{
+    this.cargarData();
+
+  }
+
+  public cargarData(){
+    this.CrudService.get('https://jsonplaceholder.typicode.com/users')
+    .subscribe(respuesta => {
+      this.lista = respuesta;
+    })
+  }
 }
