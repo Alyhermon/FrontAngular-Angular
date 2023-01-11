@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ContactosService {
 
-  _url = 'hhttp://localhost:3000'
+  _url = 'http://localhost:3000/posts'
 
   constructor(
     private http: HttpClient

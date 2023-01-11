@@ -9,6 +9,7 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 })
 export class ModalComponent implements OnInit {
 
+
   constructor(public modal: NgbModal) { }
 
   ngOnInit(): void {

@@ -1,32 +1,30 @@
 {
-    "contactos":[
-        {
-    "id": 1, 
-    "nombre": "Alina", 
-    "apellido": "Hermon",
-    "email": "Alinahermon1127@gmail.com",
-    "telefono": "8095874566"
+  "posts": [
+    {
+      "id": 1,
+      "nombre": "Alina",
+      "apellido": "Hermon",
+      "email": "Alinahermon11@gmail.com",
+      "telefono": "8095896655"
     },
     {
-    "id": 2, 
-    "nombre": "Alexander", 
-    "apellido": "Reyes",
-    "email": "Alexito@gmail.com",
-    "telefono": "8298758889"
-    }, 
-    {
-    "id": 3, 
-    "nombre": "Ericson", 
-    "apellido": "Herrera",
-    "email": "eric@gmail.com",
-    "telefono": "8596666666"
-    }, 
-    {
-    "id": 4, 
-    "nombre": "Samir", 
-    "apellido": "Gonzalez",
-    "email": "Samilr.sg@gmail.com",
-    "telefono": "8296545654"
+      "id": 2,
+      "nombre": "Ericson",
+      "apellido": "Herrera",
+      "email": "Erick@gmail.com",
+      "telefono": "7894561230"
+
     }
-]
+
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
