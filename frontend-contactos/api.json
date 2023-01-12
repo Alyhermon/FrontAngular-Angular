@@ -1,0 +1,70 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "nombre": "Alina",
+      "apellido": "Hermon",
+      "email": "Alinahermon11@gmail.com",
+      "telefono": "8296320937"
+    },
+    {
+      "id": 2,
+      "nombre": "Ericson",
+      "apellido": "Herrera",
+      "email": "Erick@gmail.com",
+      "telefono": "7894561230"
+    },
+    {
+      "id": 5,
+      "nombre": "Mabel",
+      "apellido": "Bello",
+      "email": "Mabel12@gmail.com",
+      "telefono": "7893215252"
+    },
+    {
+      "id": 6,
+      "nombre": "Darling",
+      "apellido": "Bautista",
+      "email": "Darling@gmail.com",
+      "telefono": "7854126393"
+    },
+    {
+      "id": 7,
+      "nombre": "Alan",
+      "apellido": "Castro",
+      "email": "Alancito@gmail.com",
+      "telefono": "8295583388"
+    },
+    {
+      "id": 9,
+      "nombre": "Maria",
+      "apellido": "Cubana",
+      "email": "Mariac@gmail.com",
+      "telefono": "8298529632"
+    },
+    {
+      "id": 10,
+      "nombre": "Rancer",
+      "apellido": "Cuevas",
+      "email": "RanceC@gmail.com",
+      "telefono": "8296325241"
+    },
+    {
+      "id": 11,
+      "nombre": "Miguel",
+      "apellido": "Emiliano",
+      "email": "M.Emiliano@gmail.com",
+      "telefono": "8294445555"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
