@@ -16,6 +16,7 @@
       <th scope="col">Apellido</th>
       <th scope="col">Email</th>
       <th scope="col">Telefono</th>
+      <th scope="col">Opciones</th>
     </tr>
   </thead>
   <tbody>
@@ -50,25 +51,38 @@
         <form [formGroup]="formValue">
           <div class="form-row">
             <div class="form-group">
-              <label for="inputEmail4">Nombre</label>
+              <label for="nombre">Nombre</label>
               <input type="text" formControlName="nombre" class="form-control" id="inputEmail4" placeholder="Nombre">
               <small *ngIf="formValue.get('nombre')?.invalid&&formValue.get('nombre')?.touched" class="text-danger">Name is required</small>
             </div>
             <div class="form-group">
-              <label for="inputPassword4">Apellido</label>
+              <label for="apellido">Apellido</label>
               <input type="text" formControlName="apellido" class="form-control" id="inputPassword4" placeholder="Apellido">
               <small *ngIf="formValue.get('apellido')?.invalid&&formValue.get('apellido')?.touched" class="text-danger">Last Name is required</small>
             </div>
           </div>
           <div class="form-group">
-            <label for="inputAddress">Email</label>
+            <label for="email">Email</label>
             <input type="email" formControlName="email" class="form-control" id="inputAddress" placeholder="Email">
             <small *ngIf="formValue.get('email')?.invalid&&formValue.get('email')?.touched" class="text-danger">Email is required</small>
           </div>
           <div class="form-group">
-            <label for="inputAddress2">Telefono</label>
-            <input type="text" formControlName="telefono" class="form-control" id="inputAddress2" placeholder="Telefono">
-            <small *ngIf="formValue.get('telefono')?.invalid&&formValue.get('telefono')?.touched" class="text-danger">Phone is required</small>
+            <a class="btn btn-primary" (click)="agregarTelefono()"> Agregar Telefono</a>
+          </div>
+
+          <div formArrayName="telefono" *ngFor="let telefono of telefonos.controls; let i = index">
+            <div [formGroupName]="i">
+              <div class="form-group row">
+                <label for="telefono" class="col-md-1" [attr.for]="'telefono' + i">Telefono </label>
+                <div class="col-md-5" id="inputTelefono">
+                  <input type="text" [attr.id]="'telefono' + i" formControlName="telefono" class="form-control" id="telefoono" placeholder="telefono">
+                  <small *ngIf="formValue.get('telefono')?.invalid&&formValue.get('telefono')?.touched" class="text-danger">Aunque sea un solo telefono es requerido</small>
+                </div>
+                <div class="col-md-2">
+                  <button class="btn btn-danger" (click)="deleteTelefono(i)">Remover</button>
+                </div>
+              </div>
+            </div>
           </div>
         </form>
       </div>

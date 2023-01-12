@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { ContactoService } from './services/contacto.service';
 import { app } from './ap.model';
 
@@ -25,6 +25,9 @@ export class AppComponent {
 
   allPersonasData: any;
 
+  //Indice
+  i:any
+
   constructor(
     private formBuilder: FormBuilder,
     private contactosService: ContactoService
@@ -34,14 +37,37 @@ export class AppComponent {
     });
   }
 
+  //Propiedad para devolver el control de telefonos
+
+  get telefonos(){
+    return this.formValue.get('telefono') as FormArray;
+  }
+
   ngOnInit(): void {
     this.formValue = this.formBuilder.group({
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
       email: ['', Validators.required],
-      telefono: ['', Validators.required],
+      telefono: this.formBuilder.array([], [Validators.required]) 
     });
     this.getData();
+  }
+
+  //Para Agregar Telefono
+
+  agregarTelefono(){
+    const telefonoFormGroup = this.formBuilder.group({
+      telefono: ['', Validators.required]
+    });
+    this.telefonos.push(telefonoFormGroup);
+  }
+
+
+  //Eliminar Telefonos
+
+  deleteTelefono(indice:any){
+    this.telefonos.removeAt(indice);
+
   }
 
   //Metodos de los Modales para mostrar uno y otro
