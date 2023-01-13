@@ -4,6 +4,6 @@ export class app {
     nombre: string = '';
     apellido: string = '';
     email: string = '';
-    telefono: string = '';
+    telefono: any = [];
 
 }

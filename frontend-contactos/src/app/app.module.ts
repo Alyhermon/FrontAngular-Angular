@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
 
 import { NgxMaskModule} from 'ngx-mask';
+import { TablaComponent } from './components/tabla/tabla.component';
 
 
 
@@ -16,6 +17,7 @@ import { NgxMaskModule} from 'ngx-mask';
 @NgModule({
   declarations: [
     AppComponent,
+    TablaComponent
 
     
 

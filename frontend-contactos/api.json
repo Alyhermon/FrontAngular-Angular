@@ -1,106 +1,89 @@
 {
   "posts": [
     {
-      "id": 1,
+      "id": 16,
       "nombre": "Alina",
       "apellido": "Hermon",
       "email": "Alinahermon11@gmail.com",
-      "telefono": "8296320937"
-    },
-    {
-      "id": 2,
-      "nombre": "Ericson",
-      "apellido": "Herrera",
-      "email": "Erick@gmail.com",
-      "telefono": "7894561230"
-    },
-    {
-      "id": 5,
-      "nombre": "Mabel",
-      "apellido": "Bello",
-      "email": "Mabel12@gmail.com",
-      "telefono": "7893215252"
-    },
-    {
-      "id": 6,
-      "nombre": "Darling",
-      "apellido": "Bautista",
-      "email": "Darling@gmail.com",
-      "telefono": "7854126393"
-    },
-    {
-      "id": 7,
-      "nombre": "Alan",
-      "apellido": "Castro",
-      "email": "Alancito@gmail.com",
-      "telefono": "8295583388"
-    },
-    {
-      "id": 9,
-      "nombre": "Maria",
-      "apellido": "Cubana",
-      "email": "Mariac@gmail.com",
-      "telefono": "8298529632"
-    },
-    {
-      "id": 10,
-      "nombre": "Rancer",
-      "apellido": "Cuevas",
-      "email": "RanceC@gmail.com",
-      "telefono": "8296325241"
-    },
-    {
-      "id": 11,
-      "nombre": "Miguel",
-      "apellido": "Emiliano",
-      "email": "M.Emiliano@gmail.com",
       "telefono": [
         {
-          "telefono": "6516516"
-        }
-      ]
-    },
-    {
-      "id": 12,
-      "nombre": "Alina",
-      "apellido": "A",
-      "email": "Hello@gmail.com",
-      "telefono": [
+          "telefono": "8295869512"
+        },
         {
-          "telefono": "56576767"
-        }
-      ]
-    },
-    {
-      "id": 15,
-      "nombre": "Samir",
-      "apellido": "Mundo",
-      "email": "Hello@gmail.com",
-      "telefono": [
-        {
-          "telefono": "6516516"
+          "telefono": "8294563210"
         }
       ]
     },
     {
       "id": 16,
       "nombre": "Alina",
-      "apellido": "A",
-      "email": "Hello@gmail.com",
+      "apellido": "Hermon",
+      "email": "Alinahermon11@gmail.com",
+      "telefono": "8095211236"
+    },
+    {
+      "id": 17,
+      "nombre": "Samir",
+      "apellido": "Gonzalez",
+      "email": "Samilr.sg@gmail.com",
       "telefono": [
         {
-          "telefono": "6516516"
+          "telefono": "82996322587"
+        },
+        {
+          "telefono": "8498522589"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "nombre": "Ericson",
+      "apellido": "Herrera",
+      "email": "Erics@gmail.com",
+      "telefono": [
+        {
+          "telefono": "8297123698"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "nombre": "Darling",
+      "apellido": "Bautista",
+      "email": "Darlingbau@gmail.com",
+      "telefono": [
+        {
+          "telefono": "8594563210"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "nombre": "Mabel",
+      "apellido": "Bello",
+      "email": "Mabe11@gmail.com",
+      "telefono": [
+        {
+          "telefono": "8095211236"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "nombre": "Dulcelina",
+      "apellido": "Castro",
+      "email": "Dulcecastro@gmail.com",
+      "telefono": [
+        {
+          "telefono": "893910937"
+        },
+        {
+          "telefono": "8295468521"
         }
       ]
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }
