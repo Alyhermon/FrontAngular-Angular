@@ -28,6 +28,12 @@
                 name="apellido"
                 formControlName="apellido"
             >
+            <span 
+                class="validation-text" 
+                *ngIf="!contactoAddForm.get('apellido').valid && contactoAddForm.get('apellido').touched">
+                <span *ngIf="contactoAddForm.get('apellido').errors['forbiddenChar']">Has introducido un caracter invalido para un nombre!</span>
+                <span *ngIf="contactoAddForm.get('apellido').errors['required']">Este campo es requerido!</span>
+            </span>
         </div>
 
         <div class="row mb-3 col-sm-8">
@@ -50,13 +56,11 @@
             <legend>Telefono(s)</legend>
 
             <div class="top-buttons">
-                <a appLink class="mx-3" hoverColor="green" (click)="onAddPhone()" title="Otro telefono">
-                    <span>
-                        <fa-icon [icon]="['fas', 'circle-plus']"></fa-icon>
-                    </span>
-                </a>
+                <button appLink class=" btn btn-success mx-3"  hoverColor="green" (click)="onAddPhone()" title="Otro telefono">
+                    Agregar
+                </button>
     
-                <button type="button" class="btn btn-warning mb-3" (click)="onClearAllPhones()">Eliminar todos</button>
+                <button type="button" class="btn btn-warning mb-3" style="margin-left: 10px;" (click)="onClearAllPhones()">Eliminar todos</button>
             </div>
             
             <div class="col-sm-8" formArrayName="telefonos">
@@ -65,17 +69,22 @@
                     *ngFor="let control of phoneControls; let i = index">
                     
                     <input 
+                        style="margin-top: 10px;"
                         class="form-control form-control-sm mb-1"
                         type="text"
                         [formControlName]="i">
-                    
                     <span class="validation-text" *ngIf="!control.valid && control.touched">
                         <span *ngIf="control.errors['required']">Este campo es requerido!</span>
                     </span>
                     
-                    <a appLink class="mx-3" (click)="onDeletePhone(i)">
-                        <fa-icon [icon]="['fas', 'trash-can']"></fa-icon>
-                    </a>
+
+                    <div class="btneliminar">
+                    <button class="btn btn-danger">
+                    <div appLink class="mx-3" (click)="onDeletePhone(i)">
+                        Eliminar
+                    </div>
+                    </button>
+                </div>
                 </div>
             </div>
         </div>
@@ -85,13 +94,13 @@
                 <button 
                     type="submit" 
                     class="btn btn-success"
-                    [disabled]="!formValid"
+                    [disabled]="contactoAddForm.invalid"
                 >
                     Guardar
                 </button>
             </div>
             <div class="col-sm-3">
-                <a class="btn btn-secondary" (click)="onClearForm();">Limpiar</a>
+                <button class="btn btn-secondary" style="margin-left: -100px;" (click)="onClearForm();">Limpiar</button>
             </div>
         </div>
     </form>
