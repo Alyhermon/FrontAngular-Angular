@@ -1,0 +1,77 @@
+{
+  "posts": [
+    {
+      "id": 16,
+      "nombre": "Alina",
+      "apellido": "Hermon",
+      "email": "Alinahermon11@gmail.com",
+      "telefono": [
+        "8295869512",
+        "8294563210"
+      ]
+    },
+    {
+      "id": 16,
+      "nombre": "Alina",
+      "apellido": "Hermon",
+      "email": "Alinahermon11@gmail.com",
+      "telefono": [
+        "8295869512",
+        "8294563210"
+      ]
+    },
+    {
+      "id": 17,
+      "nombre": "Samir",
+      "apellido": "Gonzalez",
+      "email": "Samilr.sg@gmail.com",
+      "telefono": [
+          "82996322587",
+          "84985225893"
+      ]
+    },
+    {
+      "id": 18,
+      "nombre": "Ericson",
+      "apellido": "Herrera",
+      "email": "Erics@gmail.com",
+      "telefono": [
+           "8297123698"
+      ]
+    },
+    {
+      "id": 19,
+      "nombre": "Mario",
+      "apellido": "Bautista",
+      "email": "Mario12@gmail.com",
+      "telefono": [
+          "8494563210",
+          "8296547894"
+      ]
+    },
+    {
+      "id": 20,
+      "nombre": "Mabel",
+      "apellido": "Bello",
+      "email": "Mabe11@gmail.com",
+      "telefono": [
+        "8095211236",
+        "8296542130"
+      ]
+    },
+    {
+      "id": 21,
+      "nombre": "Dulcelina",
+      "apellido": "Castro",
+      "email": "Dulcecastro@gmail.com",
+      "telefono": [
+        "8293910937",
+        "8295468521"
+      ]
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
