@@ -14,16 +14,6 @@ import { ContactosAddComponent } from './components/contactos/contactos-add/cont
 import { ContactosListComponent } from './components/contactos/contactos-list/contactos-list.component';
 import { TelephoneFormatPipe } from './pipes/telephone-format.pipe';
 
-import { 
-  FontAwesomeModule, 
-  FaIconLibrary
-} from '@fortawesome/angular-fontawesome';
-import {
-  faPenToSquare,
-  faTrashCan,
-  faCirclePlus,
-  faGear
-} from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -41,19 +31,10 @@ import {
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FontAwesomeModule,
     NgxMaskModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
-  constructor(library: FaIconLibrary) {
-    library.addIcons(
-      faPenToSquare,
-      faTrashCan,
-      faCirclePlus,
-      faGear
-    )
-  }
 }
