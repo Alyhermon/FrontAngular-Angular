@@ -1,96 +1,16 @@
 <nav class="navbar navbar-light bg-primary">
   <div class="container-fluid">
-      <h2 style="color: aliceblue;">Lista de Contactos</h2>
+      <h2 style="color: aliceblue;">Gestor de Contactos</h2>
       <div class="d-flex">
-        <button type="button" class="btn btn-success" id="add" (click)="add()" (click)="showupdate=false" data-toggle="modal" data-target="#exampleModal" >Add New Contact</button>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a routerLink="/contactos" style="color: white;" routerLinkActive="active" class="nav-link">Contactos</a>
+          </li>
+        </ul>
       </div>
     </div>
 </nav>
-
-<div class="tabla"> 
-<table class="table table-striped table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Nombre</th>
-      <th scope="col">Apellido</th>
-      <th scope="col">Email</th>
-      <th scope="col">Telefono</th>
-      <th scope="col">Opciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let persona of personas">
-      <td>{{persona.nombre}}</td>
-      <td>{{persona.apellido}}</td>
-      <td>{{persona.email}}</td>
-      <td>{{persona.telefono}}</td>
-      <td>
-        <button type="button" class="btn btn-primary" (click)="edit(persona)" data-toggle="modal" data-target="#exampleModal">Edit</button>
-        <button class="btn  btn-danger" (click)="deletepers(persona)">Delete</button>
-      </td>
-
-    </tr>
-  </tbody>
-</table>
-
-<!-- Modal para Post and Put-->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel">Formulario</h3>
-        <div>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      </div>
-      <div class="modal-body">
-        <form [formGroup]="formValue">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="nombre">Nombre</label>
-              <input type="text" formControlName="nombre" class="form-control" id="inputEmail4" placeholder="Nombre">
-              <small *ngIf="formValue.get('nombre')?.invalid&&formValue.get('nombre')?.touched" class="text-danger">Name is required</small>
-            </div>
-            <div class="form-group">
-              <label for="apellido">Apellido</label>
-              <input type="text" formControlName="apellido" class="form-control" id="inputPassword4" placeholder="Apellido">
-              <small *ngIf="formValue.get('apellido')?.invalid&&formValue.get('apellido')?.touched" class="text-danger">Last Name is required</small>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" formControlName="email" class="form-control" id="inputAddress" placeholder="Email">
-            <small *ngIf="formValue.get('email')?.invalid&&formValue.get('email')?.touched" class="text-danger">Email is required</small>
-          </div>
-          <div class="form-group">
-            <a class="btn btn-primary" (click)="agregarTelefono()"> Agregar Telefono</a>
-          </div>
-
-          <div formArrayName="telefono" *ngFor="let telefono of telefonos.controls; let i = index">
-            <div [formGroupName]="i">
-              <div class="form-group row">
-                <label for="telefono" class="col-md-1" [attr.for]="'telefono' + i">Telefono </label>
-                <div class="col-md-5" id="inputTelefono">
-                  <input type="text" id="telefono" [attr.id]="'telefono' + i" formControlName="telefono" class="form-control" placeholder="telefono">
-                  <small *ngIf="formValue.get('telefono')?.invalid&&formValue.get('telefono')?.touched" class="text-danger">Aunque sea un solo telefono es requerido</small>
-                </div>
-                <div class="col-md-2">
-                  <button class="btn btn-danger" (click)="deleteTelefono(i)">Remover</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button *ngIf="showadd" type="button" (click)="addPersonas()" [disabled]="!formValue.valid" class="btn btn-primary" data-dismiss="modal">Add</button>
-        <button *ngIf="showupdate" type="button" [hidden]="true" (click)="update()" [disabled]="!formValue.valid" data-dismiss="modal" class="btn btn-primary">Update</button>
-      </div>
-    </div>
-  </div>
-</div>
-
+<div class="container">
+  <br>
+  <router-outlet></router-outlet>
 </div>

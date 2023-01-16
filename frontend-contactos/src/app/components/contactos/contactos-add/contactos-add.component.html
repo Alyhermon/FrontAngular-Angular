@@ -1,0 +1,98 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit()" [formGroup]="contactoAddForm">
+        <h2>{{ editMode ? 'Editar' : 'Nuevo' }} contacto</h2>
+
+        <input type="text" hidden name="id">
+
+        <div class="row mb-3 col-sm-8">
+            <label class="form-label" for="nombre">Nombres</label>
+            <input 
+                type="text"
+                class="form-control"
+                name="nombre"
+                formControlName="nombre"
+            >
+            <span 
+                class="validation-text" 
+                *ngIf="!contactoAddForm.get('nombre').valid && contactoAddForm.get('nombre').touched">
+                <span *ngIf="contactoAddForm.get('nombre').errors['forbiddenChar']">Has introducido un caracter invalido para un nombre!</span>
+                <span *ngIf="contactoAddForm.get('nombre').errors['required']">Este campo es requerido!</span>
+            </span>
+        </div>
+
+        <div class="row mb-3 col-sm-8">
+            <label class="form-label" for="apellido">Apellidos</label>
+            <input 
+                type="text"
+                class="form-control"                
+                name="apellido"
+                formControlName="apellido"
+            >
+        </div>
+
+        <div class="row mb-3 col-sm-8">
+            <label class="form-label" for="email">Email</label>
+            <input 
+                type="text"
+                class="form-control"
+                name="email"
+                formControlName="email"
+            >
+            <span 
+                class="validation-text" 
+                *ngIf="!contactoAddForm.get('email').valid && contactoAddForm.get('email').touched">
+                <span *ngIf="contactoAddForm.get('email').errors['email']">Email invalido!</span>
+                <span *ngIf="contactoAddForm.get('email').errors['required']">Este campo es requerido!</span>
+            </span>
+        </div>
+
+        <div class="row mb-3 col-sm-8">
+            <legend>Telefono(s)</legend>
+
+            <div class="top-buttons">
+                <a appLink class="mx-3" hoverColor="green" (click)="onAddPhone()" title="Otro telefono">
+                    <span>
+                        <fa-icon [icon]="['fas', 'circle-plus']"></fa-icon>
+                    </span>
+                </a>
+    
+                <button type="button" class="btn btn-warning mb-3" (click)="onClearAllPhones()">Eliminar todos</button>
+            </div>
+            
+            <div class="col-sm-8" formArrayName="telefonos">
+                <div 
+                    class="mb-2 d-flex"
+                    *ngFor="let control of phoneControls; let i = index">
+                    
+                    <input 
+                        class="form-control form-control-sm mb-1"
+                        type="text"
+                        [formControlName]="i">
+                    
+                    <span class="validation-text" *ngIf="!control.valid && control.touched">
+                        <span *ngIf="control.errors['required']">Este campo es requerido!</span>
+                    </span>
+                    
+                    <a appLink class="mx-3" (click)="onDeletePhone(i)">
+                        <fa-icon [icon]="['fas', 'trash-can']"></fa-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4 col-sm-8">
+            <div class="col-sm-3">
+                <button 
+                    type="submit" 
+                    class="btn btn-success"
+                    [disabled]="!formValid"
+                >
+                    Guardar
+                </button>
+            </div>
+            <div class="col-sm-3">
+                <a class="btn btn-secondary" (click)="onClearForm();">Limpiar</a>
+            </div>
+        </div>
+    </form>
+</div>

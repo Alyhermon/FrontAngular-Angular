@@ -1,55 +1,69 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs';
+import { Subject } from 'rxjs';
+import { Contacto } from '../components/contactos/contacto.model';
+import data from '../../assets/json/data.json';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactoService {
+  contactosChanged = new Subject<Contacto[]>();
+  lastId: number = 0;
 
-  url: any = "http://localhost:3000/posts";
-  
-  constructor(
-    private http: HttpClient
-  ) {}
+  private contactos: Contacto[] = [];
+  private dbName: string = 'contactos-data';
 
-   //Post
+  constructor() {
+    this.loadInitialData();
+  }
 
-   postPersonas(data: any){
-    return this.http.post<any>(this.url, data)
-    .pipe(map((res:any)=> {
-      return res;
-    }))
-   }
+  loadInitialData() {
+    if (localStorage.getItem(this.dbName) !== null) { return; }
 
+    localStorage.setItem(this.dbName, JSON.stringify(data));
+  }
 
-   //Get
+  getContactos(): void {
+    const jsonObj = JSON.parse(localStorage.getItem(this.dbName) ?? '');
 
-   getPersonas(){
-    return this.http.get<any>(this.url)
-    .pipe(map((res:any)=>{
-      return res;
-    }))
-   }
+    this.contactos = jsonObj as Contacto[];
+    this.lastId = this.contactos[this.contactos.length - 1].id;
+    this.contactosChanged.next(this.contactos.slice());
+  }
 
+  getContactoById(id: number): Contacto{
+    const contact = this.contactos.find(c => c.id == id);
 
-   //Update
+    if (contact === null) { return null; }
 
-   updatePersonas(data: any, id:number){
-    return this.http.put<any>(this.url+"/"+id, data)
-    .pipe(map((res:any)=>{
-      return res;
-    }))
-   }
+    return contact;
+  }
 
+  addContacto (contacto: Contacto) {
+    contacto.id = this.lastId + 1;
 
-   //Delete
+    this.contactos.push(contacto);
+    this.contactosChanged.next(this.contactos);
 
-   deletePersonas(id:number){
-    return this.http.delete<any>(this.url+"/"+id)
-    .pipe(map((res:any)=>{
-      return res;
-    }))
+    localStorage.setItem(this.dbName, JSON.stringify(this.contactos));
+  }
 
-   }
+  updateContacto (contacto: Contacto) {
+    let contactoFound = this.contactos.find(c => c.id === contacto.id);
+    
+    let index = this.contactos.indexOf(contactoFound);
+    this.contactos[index] = contacto;
+
+    this.contactosChanged.next(this.contactos);
+    localStorage.setItem(this.dbName, JSON.stringify(this.contactos));
+  }
+
+  deleteContacto (id: number) {
+    let contactoFound = this.contactos.find(c => c.id === id);
+    let index = this.contactos.indexOf(contactoFound);
+    this.contactos.splice(index, 1);
+
+    this.contactosChanged.next(this.contactos.slice());
+    localStorage.setItem(this.dbName, JSON.stringify(this.contactos));
+  }
 }

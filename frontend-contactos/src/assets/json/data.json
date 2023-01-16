@@ -1,0 +1,71 @@
+[
+  {
+    "id": 1,
+    "nombre": "Alina",
+    "apellido": "Hermon",
+    "email": "Alinahermon11@gmail.com",
+    "telefonos": [
+      "8295869512",
+      "8294563210"
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Alina",
+    "apellido": "Hermon",
+    "email": "Alinahermon11@gmail.com",
+    "telefonos": [
+      "8295869512",
+      "8294563210"
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Samir",
+    "apellido": "Gonzalez",
+    "email": "Samilr.sg@gmail.com",
+    "telefonos": [
+      "8299632258",
+      "8498522589"
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Ericson",
+    "apellido": "Herrera",
+    "email": "Erics@gmail.com",
+    "telefonos": [
+      "8297123698"
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Mario",
+    "apellido": "Bautista",
+    "email": "Mario12@gmail.com",
+    "telefonos": [
+        "8494563210",
+        "8296547894"
+    ]
+  },
+  {
+    "id": 6,
+    "nombre": "Mabel",
+    "apellido": "Bello",
+    "email": "Mabe11@gmail.com",
+    "telefonos": [
+      "8095211236",
+      "8296542130"
+    ]
+  },
+  {
+    "id": 7,
+    "nombre": "Dulcelina",
+    "apellido": "Castro",
+    "email": "Dulcecastro@gmail.com",
+    "telefonos": [
+      "8293910937",
+      "8295468521"
+    ]
+  }
+]
