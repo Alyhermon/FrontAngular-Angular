@@ -6,12 +6,8 @@
       "apellido": "Hermon",
       "email": "Alinahermon11@gmail.com",
       "telefono": [
-        {
-          "telefono": "8295869512"
-        },
-        {
-          "telefono": "8294563210"
-        }
+        "8295869512",
+        "8294563210"
       ]
     },
     {
@@ -19,7 +15,10 @@
       "nombre": "Alina",
       "apellido": "Hermon",
       "email": "Alinahermon11@gmail.com",
-      "telefono": "8095211236"
+      "telefono": [
+        "8295869512",
+        "8294563210"
+      ]
     },
     {
       "id": 17,
@@ -27,12 +26,8 @@
       "apellido": "Gonzalez",
       "email": "Samilr.sg@gmail.com",
       "telefono": [
-        {
-          "telefono": "82996322587"
-        },
-        {
-          "telefono": "8498522589"
-        }
+          "82996322587",
+          "84985225893"
       ]
     },
     {
@@ -41,20 +36,17 @@
       "apellido": "Herrera",
       "email": "Erics@gmail.com",
       "telefono": [
-        {
-          "telefono": "8297123698"
-        }
+           "8297123698"
       ]
     },
     {
       "id": 19,
-      "nombre": "Darling",
+      "nombre": "Mario",
       "apellido": "Bautista",
-      "email": "Darlingbau@gmail.com",
+      "email": "Mario12@gmail.com",
       "telefono": [
-        {
-          "telefono": "8594563210"
-        }
+          "8494563210",
+          "8296547894"
       ]
     },
     {
@@ -63,9 +55,8 @@
       "apellido": "Bello",
       "email": "Mabe11@gmail.com",
       "telefono": [
-        {
-          "telefono": "8095211236"
-        }
+        "8095211236",
+        "8296542130"
       ]
     },
     {
@@ -74,12 +65,8 @@
       "apellido": "Castro",
       "email": "Dulcecastro@gmail.com",
       "telefono": [
-        {
-          "telefono": "893910937"
-        },
-        {
-          "telefono": "8295468521"
-        }
+        "8293910937",
+        "8295468521"
       ]
     }
   ],
